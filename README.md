@@ -8,7 +8,7 @@ mensagens, presentes e galeria de fotos.
 - Spring Boot
 - Spring Security
 - Spring Data JPA
-- MySQL
+- PostgreSQL
 - Swagger / OpenAPI
 - Maven
 

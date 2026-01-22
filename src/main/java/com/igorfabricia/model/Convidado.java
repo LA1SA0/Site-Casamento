@@ -13,13 +13,17 @@ public class Convidado {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idConvidado;
 
-    @Column (nullable = false)
+    @Column(nullable = false)
     private String nomeConvidado;
 
     private Boolean respostaPresenca;
 
     @OneToOne(mappedBy = "convidado", cascade = CascadeType.ALL)
     private Mensagem mensagem;
+
+    @ManyToOne
+    @JoinColumn(name = "presente_id")
+    private Presente presente;
 
     public void confirmarPresenca() {
         this.respostaPresenca = true;
@@ -28,5 +32,4 @@ public class Convidado {
     public void recusarPresenca() {
         this.respostaPresenca = false;
     }
-
 }

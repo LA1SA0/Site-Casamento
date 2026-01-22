@@ -22,20 +22,23 @@ public class Mensagem {
     private Convidado convidado;
 
     public static String gerarMensagemAleatoria(String nome, boolean vaiComparecer) {
+
+        String primeiroNome = nome.split(" ")[0];
+
         List<String> mensagensSim = List.of(
-                "Que bom que vai vir, " + nome + "!",
-                "Ficaremos muito felizes com sua presença, " + nome + "!",
-                "Mal podemos esperar pra te ver no grande dia, " + nome + "!",
-                nome + ", prepare-se para celebrar conosco!",
-                "Sua presença vai tornar nosso dia ainda mais especial, " + nome + "!"
+                "Que bom que vai vir, " + primeiroNome + "!",
+                "Ficaremos muito felizes com sua presença, " + primeiroNome + "!",
+                "Mal podemos esperar pra te ver no grande dia, " + primeiroNome + "!",
+                primeiroNome + ", prepare-se para celebrar conosco!",
+                "Sua presença vai tornar nosso dia ainda mais especial, " + primeiroNome + "!"
         );
 
         List<String> mensagensNao = List.of(
-                "Ah, que pena que não poderá vir, " + nome + ".",
-                "Sentiremos sua falta, " + nome + "!",
-                "Uma pena que não poderá estar presente, " + nome + ".",
-                nome + ", esperamos te ver em outra ocasião!",
-                "Mesmo de longe, sabemos que estará torcendo por nós, " + nome + "!"
+                "Ah, que pena que não poderá vir, " + primeiroNome + ".",
+                "Sentiremos sua falta, " + primeiroNome + "!",
+                "Uma pena que não poderá estar presente, " + primeiroNome + ".",
+                primeiroNome + ", esperamos te ver em outra ocasião!",
+                "Mesmo de longe, sabemos que estará torcendo por nós, " + primeiroNome + "!"
         );
 
         Random random = new Random();

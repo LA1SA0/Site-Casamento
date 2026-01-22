@@ -33,7 +33,10 @@ public class MensagemController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Mensagem> atualizar(@PathVariable Long id, @RequestBody Mensagem mensagemAtualizada) {
+    public ResponseEntity<Mensagem> atualizar(
+            @PathVariable Long id,
+            @RequestBody Mensagem mensagemAtualizada
+    ) {
         return ResponseEntity.ok(mensagemService.atualizar(id, mensagemAtualizada));
     }
 
@@ -43,8 +46,12 @@ public class MensagemController {
         return ResponseEntity.noContent().build();
     }
 
-    @GetMapping("/{id}/aleatoria")
-    public ResponseEntity<String> gerarMensagemAleatoria(@PathVariable Long id) {
-        return ResponseEntity.ok(mensagemService.gerarMensagemAleatoria(id));
+    @GetMapping("/convidado/{idConvidado}")
+    public ResponseEntity<String> gerarMensagemAleatoria(
+            @PathVariable Long idConvidado
+    ) {
+        return ResponseEntity.ok(
+                mensagemService.gerarMensagemAleatoriaPorConvidado(idConvidado)
+        );
     }
 }

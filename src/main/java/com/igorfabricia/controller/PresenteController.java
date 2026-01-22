@@ -40,5 +40,12 @@ public class PresenteController {
         presenteService.deletar(id);
         return ResponseEntity.noContent().build();
     }
+
+    @PutMapping("/reservar-publico/{id}")
+    public ResponseEntity<Presente> reservarPublico(@PathVariable Long id) {
+        Presente presente = presenteService.reservar(id);
+        return ResponseEntity.ok(presente);
+    }
 }
+
 
